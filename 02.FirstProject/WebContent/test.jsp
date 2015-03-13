@@ -11,7 +11,9 @@
 				<!-- html태그와 jsp코드를 함께 사용 -->
 <%
 	out.print("Hello");
-	// jsp 코드(java)
+	//jsp 코드(java)
+	//out ; JSP 내장객체 => out은 객체지만 개발자의 편의를 위해서 new하지 않아도 객체 생성 가능
+	
 %>
 </font>
 <br>
@@ -20,7 +22,7 @@
 <%	
 	out.print("김홍민입니다.");
 %>
-
+<br>
 <%
 	out.print("<font color='purple'>" + "빨리 쉬는시간이 되었으면 좋겠습니다" + "</font>");
 %>
