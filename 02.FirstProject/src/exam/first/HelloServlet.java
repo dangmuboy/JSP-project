@@ -12,8 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class HelloServlet
  */
-@WebServlet("*.first")
-	//어노테이션
+@WebServlet("/HelloServlet")
+	//URL Mapping ; 원래 서버쪽으로 요청할때 URL을 적어야 되는데 
+	//서비스를 구분해줄때 쓰는게 URL Mapping
+	
 	//원래 URL치고 들어가면 lib 하위 web.xml(welcome어쩌구)를 먼저 찾아가는데
 	//어노테이션을 붙여서 이페이지를 찾아오게끔 만듬
 	///Hello 대신에 "/a.first" 해도 같은효과 = "*.first"  => URL Mapping	
@@ -35,6 +37,7 @@ public class HelloServlet extends HttpServlet {
         super();
         //부모생성자 호출
         // TODO Auto-generated constructor stub
+        //클라이언트가 서버쪽으로 request 하면 자동으로 'new'하는 효과-> 생성자 호출 
     }
 
 	/**
@@ -47,7 +50,20 @@ public class HelloServlet extends HttpServlet {
 		//getter 메소드는 매개변수 없고, 리턴타입 있다. 
 		//get 커서 올려서 처음 나오는게 리턴타입
 		
-		out.print("Hello");
+		
+		String n = request.getParameter("name");
+		//요청하는것 중에서 파라미터로 넘어오는애들(3개)중 name으로 넘어오는애
+		//String name은 리턴타임; parameter에 마우스 올려놓으면 보임
+		//페이지에서 name 타입에 넘어오는 애들을 왼쪽 String name에 대입 ★★★★★★★★★
+		//왼쪽 변수 name은 out.print 매개변수랑 일치시켜야됨 ★★★★★★★★★★
+		String i = request.getParameter("ID");
+		String p = request.getParameter("pwd");
+		request.getParameter("pwd");
+		
+		out.println("Hello-GET");
+		out.println(n);
+		out.println(i);
+		out.println(p);
 		
 	}
 
@@ -56,6 +72,23 @@ public class HelloServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		//get방식으로 요청 -> doGet 호출
+		//post방식으로 요청 -> doPost 호출
+		
+		// TODO Auto-generated method stub
+				PrintWriter out = response.getWriter();
+				
+				String n = request.getParameter("name");
+				String i = request.getParameter("ID");
+				String p = request.getParameter("pwd");
+				request.getParameter("pwd");
+				
+			
+				out.println(n);
+				out.println(i);
+				out.println(p);
+			
+				out.println("Hello-POST");
 	}
 
 }
