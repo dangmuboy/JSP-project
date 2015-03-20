@@ -45,6 +45,11 @@ public class HelloServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		
+		
 		PrintWriter out = response.getWriter();
 		//여기서 response는 doGet의 매개변수의 이름과 일치하여야 함.
 		//getter 메소드는 매개변수 없고, 리턴타입 있다. 
@@ -60,11 +65,14 @@ public class HelloServlet extends HttpServlet {
 		String p = request.getParameter("pwd");
 		request.getParameter("pwd");
 		
-		out.println("Hello-GET");
-		out.println(n);
-		out.println(i);
-		out.println(p);
+		out.print("<html>");
+		out.println("Hello-GET<br>");
+		out.println("이름 : "+ n + "<br>" );
+		out.println("ID : "+ i + "<br>");
+		out.println("password : " + p + "<br>");
+		out.print("</html>");
 		
+		//br태그 적용하기	
 	}
 
 	/**
@@ -76,19 +84,27 @@ public class HelloServlet extends HttpServlet {
 		//post방식으로 요청 -> doPost 호출
 		
 		// TODO Auto-generated method stub
+				
+				//한글처리
+				request.setCharacterEncoding("UTF-8");
+				//클라이언트
+				response.setContentType("text/html; charset=UTF-8");
+				//서버
+				
 				PrintWriter out = response.getWriter();
+				//응답헤더
 				
 				String n = request.getParameter("name");
 				String i = request.getParameter("ID");
 				String p = request.getParameter("pwd");
 				request.getParameter("pwd");
 				
-			
-				out.println(n);
-				out.println(i);
-				out.println(p);
-			
-				out.println("Hello-POST");
+				//out.print("<html>");
+				out.println("Hello-POST<br>");
+				out.println("이름 : "+ n + "<br>" );
+				out.println("ID : "+ i + "<br>");
+				out.println("password : " + p + "<br>");
+				//out.print("</html>");
 	}
 
 }
