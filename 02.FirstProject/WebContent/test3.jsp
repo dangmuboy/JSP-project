@@ -3,7 +3,7 @@
     
 <%
   
-	out.print("Hello JSP<Br>"); // out -> 내장객체
+	out.print("Hello JSP<Br>"); // out -> 내장객체;만들지않아도 자동으로 만들어져 있음
 	
 	String n = request.getParameter("name"); // request -> 내장객체
 	

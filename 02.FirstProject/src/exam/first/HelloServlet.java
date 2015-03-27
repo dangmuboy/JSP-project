@@ -89,7 +89,7 @@ public class HelloServlet extends HttpServlet {
 				request.setCharacterEncoding("UTF-8");
 				//클라이언트
 				response.setContentType("text/html; charset=UTF-8");
-				//서버
+				//서버					//text/html ->MIME타입,대분류/소분류
 				
 				PrintWriter out = response.getWriter();
 				//응답헤더
@@ -105,6 +105,8 @@ public class HelloServlet extends HttpServlet {
 				out.println("ID : "+ i + "<br>");
 				out.println("password : " + p + "<br>");
 				//out.print("</html>");
+				
+				
 	}
 
 }
