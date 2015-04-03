@@ -53,6 +53,7 @@
     	</select><br>
     	
     	<!--  라디오 버튼은 name이 같을때 다를때 효과가 다르지만, 체크박스는 아님 -->
+    	<!--  체크박스는 배열로 처리하기위해 name을 통일 -->
 
     	<input type="color" name="mycolor">
     	E-Mail : <input type="email" name="email">

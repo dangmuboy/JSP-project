@@ -70,8 +70,9 @@ public class TestServlet extends HttpServlet {
 		out.println(area+"<br>");
 		
 		//값 하나만 넘어오는거는 getParameter!!!!!
+		//여러개는 request.getParameterValues!!!!
 		
-		
+		out.close();           //출력stream닫기
 	}
 
 	/**
