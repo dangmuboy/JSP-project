@@ -13,7 +13,7 @@
     <hr>
     <table border="1">
     	<tr>
-    		<td>getServerInfo()</td> 리얼패스 컨텍스트패스
+    		<td>getServerInfo()</td> 
     		<td><%= application.getServerInfo() %></td>
     	</tr>
     	<tr>
