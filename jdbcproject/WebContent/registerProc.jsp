@@ -4,7 +4,9 @@
     
 <%
 	String id = request.getParameter("id");
+	String pass = request.getParameter("pwd");
 	//out.print(id); 이건 테스트
+	
 	// 1. JDBC 드라이버 로드
 	Class.forName("oracle.jdbc.driver.OracleDriver");
 	
@@ -13,9 +15,14 @@
 	//getConnection 객체의 리턴타입이 Connection 이기 때문에 
 	
 	// 3. SQL문 실행
-	String sql = "insert into member values('"+id+"','1234','홍길동',20,'1','서울시','2015-04-17')";
+	String sql = "insert into member values('"+id+"','"+pass+"','홍길동',20,'1','서울시','2015-04-17')";
 	Statement stmt = con.createStatement();								//SQL문으로 인식하게 하기위한 객체
-	stmt.executeUpdate(sql);	//실행
+	//int result = stmt.executeUpdate(sql);	
+	//out.print(result);
+	
+	stmt.executeUpdate(sql);//실행
+	
+	
 	// 4. 데이터베이스와 연결 끊음
 	stmt.close();
 	con.close();
