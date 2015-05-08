@@ -43,13 +43,16 @@
 	pstmt.setString(3, name);
 	pstmt.setInt(4, Integer.parseInt(age));
 	pstmt.setString(5, gender);
-
 	pstmt.setString(6, addr);
 	
 	
 	int result = pstmt.executeUpdate();
 	
-	out.print(result);
+	if(result ==1)
+		response.sendRedirect("list");
+	//가입후 list로 바로 이동하게
+	
+	//out.print(result);
 	
 	// 4. 데이터베이스와 연결 끊음
 	pstmt.close();
